@@ -5,6 +5,14 @@ import "./App.css";
 function App() {
   let [count, setCount] = useState(15);
 
+  //in vedio 8
+  // const adddvalue =() =>{
+  //   setCount(count+1)
+  //   setCount(count+1)    //its add value once only not 4 times,becouse react send function as once
+  //   setCount(count+1)    //to actually implemnt it write setCount(count => count+1);
+  //   setCount(count+1)
+  // }
+
   const increaseValue = () => {
     // count=count+1;
     console.log(count);
