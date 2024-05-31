@@ -47,7 +47,7 @@ function App() {
       {/* <h1 className="text-4xl text-center text-white">Password Generator</h1>
        */}
       <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-8 py-4 my-9 bg-gray-800 text-orange-500 text-center">
-        <h1 className="py-3">Password Generator</h1>
+        <h1 className="py-3 hover:text-orange-600">Password Generator</h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input
             type="text"
@@ -58,7 +58,7 @@ function App() {
             readOnly
           ></input>
           <button
-            className="px-4 py-0.5 bg-blue-700 text-amber-50 "
+            className="px-4 py-0.5 bg-blue-700 text-amber-50 hover:bg-blue-800 "
             onClick={copypassword}
           >
             Copy

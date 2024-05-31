@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xml Api</title>
+  </head>
+  <body>
+    <h1>HITESH FOLLOWER</h1>
+    <h2 id="foo">original content</h2>
+  </body>
+  <script>
+    const requesturl = "https://api.github.com/users/hiteshchoudhary"; //getting url of json
+    const xhr = new XMLHttpRequest(); //starting
+    xhr.open("GET", requesturl);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText); //json.parse helps to convert the bydefault string data type to obj data type
+
+        console.log(typeof data);
+        console.log(data.followers);
+        const follow = data.followers;
+        const mewo = document.getElementById("foo");
+        mewo.innerHTML = follow;
+      }
+    };
+    xhr.send(); //Finaaly to end
+  </script>
+</html>
