@@ -58,6 +58,7 @@ fourpromise
     console.log("error");
   })
   .finally(() => {
+    //not of anyuse just to finalise
     console.log("The promise is resolved fully or rejected");
   });
 //BY USING THE AYSUNC FUCNTION
