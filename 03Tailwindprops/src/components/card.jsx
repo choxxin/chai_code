@@ -1,3 +1,4 @@
+//Props is a special keyword in React that stands for properties and is used for passing data from one component to another
 import React from "react";
 // cointaing some bydefau;t value and if value given its chose that one , to inject js we use {}
 function Card({ description = "EMPTY", username = "ansh", post = "anime" }) {
