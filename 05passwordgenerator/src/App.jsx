@@ -1,7 +1,6 @@
 // import { useState } from "react";
 import { useState, useCallback, useEffect, useRef } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 // 1. use Callback: used for optimization it calls the function inside it when the dependencies are changed and returns a memorized function
 // 2.useeffect: runs the function inside it whenever the page renders first-time or dependencies are changed
 // 3.use ref : used to give reference of selected components in our page so that functions can be performed on referenced values
