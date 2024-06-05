@@ -59,8 +59,8 @@ function App() {
     >
       {/* //App js ui  */}
 
-      <div className="bg-[#000000] h-screen w-screen py-16 mr-4">
-        <div className=" bg-black w-full max-w-6xl mx-auto shadow-md rounded-lg px-9 py-5 ml-8 text-white">
+      <div className="bg-[#000000] h-screen w-screen  mr-4">
+        <div className=" bg-black w-full max-w-6xl mx-auto shadow-md rounded-lg px-9  ml-8 text-white">
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">
             Manage Your Todos
           </h1>
