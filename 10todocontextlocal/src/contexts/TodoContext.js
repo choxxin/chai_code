@@ -1,5 +1,7 @@
 import { createContext, useContext } from "react";
 
+//In this file we define what we neeed
+
 export const TodoContext = createContext({
   todo: [{ id: 1, todo: "todomssg", completed: false }],
   addTodo: (todo) => {},
@@ -9,7 +11,8 @@ export const TodoContext = createContext({
 });
 
 export const useTodo = () => {
+  //Get the direct accces
   return useContext(TodoContext);
 };
 
-export const Todoprovider = TodoContext.Provider;
+export const Todoprovider = TodoContext.Provider; //This is the provider

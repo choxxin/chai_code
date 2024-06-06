@@ -6,16 +6,30 @@ import { useEffect } from "react";
 import TodoForm from "./Components/TodoForm";
 import TodoItem from "./Components/Todoitem";
 function App() {
+  //Array of todo
   const [todo, setTodo] = useState([]);
-
+  //WORKING-
+  //Takes the id as datenow which include seconds also
+  //spreading todo which cointains the todo task as weel as conmplete or not
+  //then spreding all previous value
   const addTodo = (todo) => {
     setTodo((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
+  //WORKING-
+
+  //Takes id and apply a loop and compare everid of prev value
+  //if martched then apply new to do else remain prevtodo
   const updateTodo = (id, todo) => {
     setTodo((prev) =>
       prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))
     );
   };
+
+  //WORKING:-
+
+  //filter function  allow thos whose condition come true\
+
+  //Takes prev value and whose id is not matched allow them if matched that is the one to delete
 
   const deleteTodo = (id) => {
     setTodo((prev) => prev.filter((todo) => todo.id !== id));
@@ -31,6 +45,10 @@ function App() {
   //     )
   //   );
 
+  //WORKING-\
+  // Match up the id by looping if matched ,keep all vgalue same by spreadfing its prevvalue just
+  // overwrite the spread value completed with the opposite of prev completed
+
   const toggleComplete = (id) => {
     setTodo((prev) => {
       return prev.map((prevTodo) => {
@@ -40,6 +58,14 @@ function App() {
       });
     });
   };
+
+  //LOCALSTORAGE
+
+  //(JSON.PARSE:- Convert json into obj)
+  //(JSON.stringify:- convert obj to json )
+
+  //THis useffect will run only once while reolding and get the item from local storage
+  //and pass its value to todo
   useEffect(() => {
     const todo = JSON.parse(localStorage.getItem("todo"));
 
@@ -48,6 +74,8 @@ function App() {
     }
   }, []);
 
+  //This useeffct will rubneverytime  todo value is changed and pass the
+  //availble item to locla storage by converting it into json format
   useEffect(() => {
     localStorage.setItem("todo", JSON.stringify(todo));
   }, [todo]);

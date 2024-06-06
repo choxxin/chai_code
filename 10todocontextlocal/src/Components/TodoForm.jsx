@@ -10,7 +10,7 @@ function TodoForm() {
     e.preventDefault();
 
     if (!todo) return; //If there is nothing in to do we will return nothing
-    addTodo({ todo, completed: false });
+    addTodo({ todo, completed: false }); //calling the function addtodo
     setTodo(""); //Emptuying the todo after inserting it
   };
   return (

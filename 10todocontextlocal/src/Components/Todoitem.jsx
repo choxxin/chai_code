@@ -4,12 +4,12 @@ import { useState } from "react";
 
 function TodoItem({ todo }) {
   //usesate snipet for full usestate
-  const [isTodoEditable, setIsTodoEditable] = useState(false);
-  const [todoMsg, setTodoMsg] = useState(todo.todo);
-  const { updateTodo, deleteTodo, toggleComplete } = useTodo();
+  const [isTodoEditable, setIsTodoEditable] = useState(false); // IS IT EDITABLE
+  const [todoMsg, setTodoMsg] = useState(todo.todo); //WHAT IS THE CONETENT by defaault its todos todo
+  const { updateTodo, deleteTodo, toggleComplete } = useTodo(); //GEtting it from the api context
 
   const editTodo = () => {
-    updateTodo(todo.id, { ...todo, todo: todoMsg });
+    updateTodo(todo.id, { ...todo, todo: todoMsg }); // passing the id, spreading it and overwriting its todos todo mssg by mssg state
   };
   const toggleCompleted = () => {
     toggleComplete(todo.id);
