@@ -4,12 +4,12 @@ import { useDispatch } from "react-redux";
 
 function AddTodo() {
   const [input, setInput] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); //to set the value
 
   const addTodoHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
-    setInput("");
+    dispatch(addTodo(input)); //calling the function addtodo from set to do to set value
+    setInput(""); //after adding setting up the value to ""
   };
 
   return (
@@ -21,7 +21,7 @@ function AddTodo() {
         type="text"
         placeholder="Enter a Todo"
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => setInput(e.target.value)} //On changing setinput taregt value
         className="w-full max-w-md px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       />
 
