@@ -5,7 +5,7 @@ import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
 import { Header, Footer } from "./components";
 import { Outlet } from "react-router-dom";
-import { OAuthProvider } from "appwrite";
+// import { OAuthProvider } from "appwrite";
 function App() {
   //console.log(process.env.REACT_APP_APPWRITE_URL);
   //WE ARE using vite not react we will not use this
@@ -37,7 +37,7 @@ function App() {
         <div className="w-full block">
           <Header />
           <main>
-            TODO: <Outlet />
+            <Outlet />
           </main>
           <Footer />
         </div>

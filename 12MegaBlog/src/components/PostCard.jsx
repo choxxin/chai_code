@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 //This is the file preview component
 //Id is written in dollar read documnetation i preview we write id in dollar
 function PostCard({ $id, title, featuredImage }) {
+  console.log(featuredImage);
+  // const img = appwriteService.getFilePreview(featuredImage);
+
   return (
     // By clicking on the post it will take u to the full content of the post
     <Link to={`/post/${$id}`}>

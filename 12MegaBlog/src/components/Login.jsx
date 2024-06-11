@@ -18,7 +18,7 @@ function Login() {
       const session = await authService.login(data);
       if (session) {
         const userData = await authService.getCurrentUser();
-
+        console.log(userData);
         if (userData) dispatch(authLogin(userData));
         navigate("/"); //Duffernc ebetween logn and navigate is that u have to cick in link but u dont havet  ckick on naviagte it will automatic redirect u
       }

@@ -28,7 +28,7 @@ export class Service {
         }
       );
     } catch (error) {
-      console.log("Appwrite service :: craatepost ::error", error);
+      console.log("Appwrite service :: createpost ::error", error);
     }
   }
   //UPDATEPOST
@@ -86,9 +86,13 @@ export class Service {
         conf.appwriteCollectionId,
         queries
       );
-    } catch (error) {}
+    } catch (error) {
+      console.log("Appwrite serive :: getallPosts :: error", error);
+      return false;
+    }
   }
   async uploadFile(file) {
+    console.log(conf.appwriteBucketd);
     try {
       return await this.bucket.createFile(
         conf.appwriteBucketd,

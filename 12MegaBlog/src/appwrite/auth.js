@@ -49,9 +49,9 @@ export class AuthService {
     return null; // For emergencvy case if try catch doent get error
   }
 
-  async Logout() {
+  async Logout(str) {
     try {
-      await this.account.deleteSession();
+      await this.account.deleteSession(str);
     } catch (error) {
       console.log("Appwrite error :: logout :::", error);
     }
