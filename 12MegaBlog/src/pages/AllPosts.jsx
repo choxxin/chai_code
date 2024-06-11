@@ -4,15 +4,20 @@ import appwriteService from "../appwrite/config";
 
 function AllPosts() {
   const [posts, setPosts] = useState([]);
+  const [Loader, setLoader] = useState(true);
+  useEffect(() => {
+    appwriteService
+      .getallPost([])
+      .then((posts) => {
+        if (posts) {
+          setPosts(posts.documents);
+          // console.log(posts.documents);
+        }
+      })
+      .finally(() => setLoader(false));
+  }, []);
 
-  appwriteService.getallPost([]).then((posts) => {
-    if (posts) {
-      setPosts(posts.documents);
-      // console.log(posts.documents);
-    }
-  });
-
-  return (
+  return !Loader ? (
     <div className="w-full py-8">
       <Container>
         <div className="flex flex-wrap">
@@ -24,6 +29,15 @@ function AllPosts() {
           ))}
         </div>
       </Container>
+    </div>
+  ) : (
+    <div
+      className="inline-block h-14 w-14 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+      role="status"
+    >
+      <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+        Loading...
+      </span>
     </div>
   );
 }

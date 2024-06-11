@@ -3,6 +3,7 @@ import { Container, Logoutbtn, Logo } from "../index";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { isAction } from "@reduxjs/toolkit";
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -10,7 +11,7 @@ function Header() {
 
   const navItems = [
     {
-      name: "Home",
+      name: "Your Posts",
       slug: "/",
       active: true,
     },
@@ -54,7 +55,13 @@ function Header() {
                   <li key={item.name}>
                     <button
                       onClick={() => navigate(item.slug)} //Instead of link u can also use navigate
-                      className="inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
+                      //   className={({ isActive }) =>
+                      //     ` ${isActive ? "text-orange-700" : "text-gray-700"}
+                      //  inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full`
+                      //   }
+                      className={
+                        "inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
+                      }
                     >
                       {item.name}
                     </button>
